@@ -1,0 +1,78 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <title>Fake News Detection<</title>
+</head>
+<style>
+    td {
+        border: 1px black solid;
+        /* padding: 5px; */
+        cursor: pointer;
+    }
+
+    .selected {
+        background-color: blue;
+        color: #FFF;
+    }
+</style>
+<nav class="navbar sticky-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Fake News Detection</a>
+</nav>
+<div class="container-fluid" style="text-align: center">
+    <div class="row justify-content-center">
+        <div style="background-color:whitesmoke;padding:20px; text-align: left;">
+            The news information can be easily accessed through Internet and social media. It is convenient for user to follow their interest events available in online mode.
+Mass-media playing a huge role in influencing the society and as it is common, some people try to take advantage of it. There are many websites which provide false information. They consciously try to bring out misinformation under the guise of being authentic news. 
+Their primary purpose is to manipulate the information that can make public believe in it. There are lots of example of such websites all over the world. Therefore, fake news affects the minds of the people.
+In this project, we introduce the method of using multinomial naive bayes algorithm to detect fake news that are repeatedly spread across social media and other websites.
+
+
+        </div>
+    </div>
+    <br>
+    <!-- <div class="row justify-content-center">
+        <div class="col-6">
+            <form id="review_form">
+                {% csrf_token %}
+                <input id="review" name="review" class="form-control" type="textarea"> <br>
+                <button class="btn btn-dark" type="submit">Submit</button>
+            </form>
+            <br>
+        
+        </div>
+    </div> -->
+    <h3>UNCOVER FAKE NEWS</h3>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-8">
+    <form id="fm">
+        {% csrf_token %}
+        <label for="field">Enter a News</label>
+        <textarea rows="3" id="news" name="field" class="form-control" ></textarea>
+        <br>
+        <input class="ok btn btn-dark" id="predict" type="submit" name="OK" value="PREDICT" />
+    </form>
+</div>
+</div>
+    <br> <br>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div id="result" role="alert" style="display: none;"></div>
+            <div id="loading"></div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+</html>
